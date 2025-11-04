@@ -19,16 +19,9 @@ From the root,
 * `grep -v PARENTDIR index.html | grep '\[IMG' | grep -Po 'a href="\K.*?(?=")' | sed 's/\?.*//' > _imglist.txt`
 * `wget -N -i _imglist.txt -B http://orteil.dashnet.org/cookieclicker/img/`
 
-#### 2. Fetch all new sounds :
 
-Similarly, from the root :
 
-* `cd snd/`
-* `wget --convert-links -O index.html http://orteil.dashnet.org/cookieclicker/snd/`
-* `grep -v PARENTDIR index.html | grep '\[SND' | grep -Po 'a href="\K.*?(?=")' | sed 's/\?.*//' > _sndlist.txt`
-* `wget -N -i _sndlist.txt -B http://orteil.dashnet.org/cookieclicker/snd/`
-
-#### 3. Fetch all new translations :
+#### 2. Fetch all new translations :
 
 Similarly, from the root :
 
@@ -37,7 +30,7 @@ Similarly, from the root :
 * `grep -v PARENTDIR index.html | grep '\[  ' | grep -Po 'a href="\K.*?(?=")' | sed 's/\?.*//' > _loclist.txt`
 * `wget -N -i _loclist.txt -B http://orteil.dashnet.org/cookieclicker/loc/`
 
-#### 4. Update `js` and `html` files :
+#### 3. Update `js` and `html` files :
 
 From the root directory :
 
@@ -49,6 +42,6 @@ From the root directory :
   * Look for `ajax('/patreon/grab.php'` and replace it with `ajax('grab.txt'`
   * In the root: `wget -O grab.txt http://orteil.dashnet.org/patreon/grab.php`
 
-#### 5. Report update here :)
+#### 4. Report update here :)
 
 If you happen to update, please make a pull request for others to benefit, thanks!
